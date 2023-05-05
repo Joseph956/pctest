@@ -1,8 +1,14 @@
 <template>
   <div>
     <Navbar />
-    <main>
+    <div>
+      <!-- <main> -->
+      <div>
+        <input type="text" v-model="username" v-on:input="checkValidity" />
+        <p v-if="isValidUsername">{{ username }} is a valid username!</p>
+      </div>
       <h1>Bienvenue chez pctest !</h1>
+      <!-- <button @click="sendMessage">Envoyer un message</button> -->
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -14,19 +20,40 @@
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </p>
-    </main>
-    <Footer />
+      <!-- </main> -->
+    </div>
+    <Footteur />
   </div>
 </template>
 
 <script>
 import Navbar from "@/views/Navbar.vue";
-import Footer from "@/views/Footer.vue";
+import Footteur from "@/views/Footteur.vue";
 export default {
-  nam: "Accueil",
+  name: "Accueil",
+  data() {
+    return {
+      username: "",
+      isValidUsername: false,
+    };
+  },
+  methods: {
+    checkValidity() {
+      // Vérifier la validité du nom d'utilisateur
+      const regex = /^([A-Za-z]{3,20})?([-]{0,1})?([A-Za-z]{3,20})$/;
+      this.isValidUsername = regex.test(this.username);
+    },
+  },
+  // methods: {
+  //   sendMessage() {
+  //     this.$emit('message-sent',
+  //     message: 'Mon message',
+
+  //     )}
+  // },
   components: {
     Navbar,
-    Footer,
+    Footteur,
   },
 };
 </script>

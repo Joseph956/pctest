@@ -12,7 +12,26 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-weight: inherit;
+  font-style: inherit;
+  // font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+  box-sizing: border-box;
+}
 #app {
+  display: flex;
+  flex-direction: column;
+  // width: fit-content;
+  min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

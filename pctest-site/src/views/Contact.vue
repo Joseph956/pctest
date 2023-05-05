@@ -15,19 +15,19 @@
         of Lorem Ipsum.
       </p>
     </div>
-    <Footer />
+    <Footteur />
   </div>
 </template>
 
 <script>
 import Navbar from "@/views/Navbar.vue";
-import Footer from "@/views/Footer.vue";
+import Footteur from "@/views/Footteur.vue";
 export default {
   name: "Contacts",
 
   components: {
     Navbar,
-    Footer,
+    Footteur,
   },
 };
 </script>
