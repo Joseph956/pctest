@@ -3,23 +3,38 @@
     <Navbar />
     <div>
       <!-- <main> -->
-      <div>
+      <!-- <div>
         <input type="text" v-model="username" v-on:input="checkValidity" />
         <p v-if="isValidUsername">{{ username }} is a valid username!</p>
+      </div> -->
+      <div class="present">
+        <h1>Bienvenue chez pctest !</h1>
+        <!-- <button @click="sendMessage">Envoyer un message</button> -->
+  
+        <br />
+        <p>
+          Joseph ANGILERI 06 35 21 25 31 / Dépannages / Assistance / Conseils et
+          prestations de services informatiques à domicile
+        </p>
+        <br />
+        <p>
+          Sur la ville de Toulon et sa périphérie pour la réparation, la
+          maintenance ou la mise en service de vos appareils informatiques,
+          Ordinateurs / Tablettes / Périphériques / imprimantes.
+        </p>
+        <br />
+        <p>
+          L'onglet « Contact » permet une prise en compte rapide de votre demande
+          et le rappel dans la première heure pour une intervention à domicile.
+        </p>
+        <br />
+        <p>
+          En atelier toutes les prestations sont proposées sur devis estimatif
+          détaillé et chiffré fait avant toutes prises en charges de vos
+          appareils.
+        </p>
       </div>
-      <h1>Bienvenue chez pctest !</h1>
-      <!-- <button @click="sendMessage">Envoyer un message</button> -->
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
+    
       <!-- </main> -->
     </div>
     <Footteur />
@@ -58,5 +73,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.present {
+  width: 50%;
+  margin: auto;
+  text-align: justify;
+  padding: 1rem;
+  background-color: #ffffff;
+}
 </style>

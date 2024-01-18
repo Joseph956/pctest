@@ -27,6 +27,16 @@ export default {
   list-style: none;
   box-sizing: border-box;
 }
+body {
+  background: url("./assets/Fond-Gris.jpg") no-repeat center fixed;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  font-weight: 400;
+  font-family: "lato", sans-serif;
+  font-size: large;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -37,6 +47,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  // margin-top: 60px;
 }
 </style>
