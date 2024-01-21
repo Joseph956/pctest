@@ -3,8 +3,8 @@
     <Navbar />
     <div class="depann">
       <p>
-        Maintenance / Dépannages<br />Assistance / Conseils <br />Prestations
-            de Services Informatiques<br />
+        Ordinateurs / Tablettes / Périphériques / imprimantes /
+        Maintenance / Dépannages<br />Assistance / Conseils <br />
       </p>
       <div class="depannLogo">
         <img
@@ -17,8 +17,9 @@
           alt="logo pctest"
         />
       </div>
+      <p><br /></p>
       <br />
-      <h2>Dépannages pc fixes ou portables</h2>
+      <h2>Prestations de Services Informatiques</h2>
       <p class="depannText">
         <br />
         le décompactage de votre ordinateur neuf. la préparation de votre

@@ -5,6 +5,7 @@
     <div class="containerTextVentes">
       <br />
       <h1>CGV et CGU</h1>
+      <h6>TVA non applicable art 293 B du CGI</h6>
       <br />
       <h2>Conditions générales de ventes et d'utilisation</h2>
       <br />
@@ -195,10 +196,10 @@
         <br />
       </div>
       <div class="textVentes">
-        <h3>Fait à Toulon (83), le 02 janvier 2020.</h3>
+        <p>Fait à Toulon (83), le 02 janvier 2020.</p>
         <br />
       </div>
-      <h2>TVA non applicable art 293 B du CGI</h2>
+      
       <br />
     </div>
     <Footteur />
@@ -219,6 +220,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@font-face {
+    font-family: "Lato";
+    src: local("Lato"), url("/public/fonts/Lato/Lato-Light.ttf") format("ttf");
+}
+
+h1,
+h2 {
+    font-family: "Lato";
+}
 .containerTextVentes {
   width: 50%;
   margin: auto;

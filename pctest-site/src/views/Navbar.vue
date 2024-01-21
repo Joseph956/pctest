@@ -1,10 +1,10 @@
 <template>
   <div>
     <body>
-      <header>
+      <header id="branding">
         <!-- Image de fond -->
-         <!-- <router-link to="/">Accueil</router-link> -->
-          <!-- <nav>
+        <!-- <router-link to="/">Accueil</router-link> -->
+        <!-- <nav>
             <div class="kmContainer">
               <div class="kmMenuNav">
                 <div class="kmNavContainer">
@@ -54,54 +54,80 @@
               </div>
             </div>
           </nav> -->
-       
-        <div>
-          <a href="/">
-            <img
-              class="imgAccueil"
-               style="width: 50%; height: auto;"
-              x="0"
-              y="0"
-              height="100"
-              width="100"
-              id="imgBottomAvatarPctest"
-              alt="Vue logo"
-              src="@/assets/newdepan02-1.jpg"
-            />
-          </a>
 
-         
-
-          <nav class="navbar dark-mode" role="navigation">
-            <div class="navContainer">
-              <ul class="navbarLinks">
-                <li class="navbarLink">
-                  <router-link to="/accueil"> Accueil</router-link>
-                </li>
-                <li class="navbarLink">
-                  <router-link to="/depannages"
-                    >Prestations
-                  </router-link>
-                </li>
-                <li class="navbarLink">
-                  <router-link to="/logitheque">Logithèque</router-link>
-                </li>
-                <li class="navbarLink">
-                  <router-link to="/tarifs">Tarifs</router-link>
-                </li>
-                <li class="navbarLink">
-                  <router-link to="/contact">Contact </router-link>
-                </li>
-                <li class="navbarLink">
-                  <router-link to="/about">A propos</router-link>
-                </li>
-              </ul>
+        <!-- <div> -->
+        <!-- Image d'accueil -->
+        <a href="/">
+          <img
+            class="imgAccueil"
+            style="width: 50%; height: auto"
+            x="0"
+            y="0"
+            height="100"
+            width="100"
+            id="imgBottomAvatarPctest"
+            alt="Vue logo"
+            src="@/assets/newdepan02-1.jpg"
+          />
+        </a>
+        <!-- Copyright -->
+        <div class="copyrightPctest">
+          <span><h6>© 2024 Copyright Pctest.fr Tous droits réservés.</h6></span>
+        </div>
+        <!--Barre de navigation  -->
+        <nav class="navbar dark-mode" role="navigation">
+          <div class="navContainer">
+            <ul class="navbarLinks">
+              <li class="navbarLink">
+                <router-link to="/accueil"> Accueil</router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/depannages">Prestations </router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/logitheque">Logithèque</router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/tarifs">Tarifs</router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/contact">Contact </router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/about">A propos</router-link>
+              </li>
+              <!-- Bouton de recherche -->
+              <form
+                action="http://localhost:3001/"
+                method="get"
+                id="searchform"
+              >
+                <label for="search" class="assistive-text"></label>
+                <input
+                  type="search"
+                  id="search"
+                  placeholder="Recherche "
+                  value=""
+                  onchange="searchPage()"
+                />
+                <!-- <input type="text" name="s" id="search" class="field" placeholder="Recherche"> -->
+                <input
+                  type="submit"
+                  class="submit"
+                  name="submit"
+                  id="searchsubmit"
+                  value="Recherche"
+                />
+              </form>
+            </ul>
+            <div class="only-search width-image">
               <button class="burger">
                 <span class="bar"></span>
               </button>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
+        <!-- </div> -->
       </header>
       <!-- <main class="main-content" role="main">
         <h1>Menu Responsive avec Burger Animé</h1>
@@ -121,6 +147,26 @@ export default {
   //   props: {
   //     msg: String,
   //   },
+
+  methods: {
+    // searchPage() {
+    //   var a = document.getElementById("search").value;
+    // }
+    searchPage: function () {
+      var a = document.getElementById("search").value;
+      if (
+        (a == "ordinateurs",
+        "tablettes",
+        "peripheriques",
+        "imprimantes",
+        "maintenance",
+        "depannages",
+        "services")
+      ) {
+        window.location.href = "depannages/";
+      }
+    },
+  },
 };
 </script>
 
@@ -153,6 +199,10 @@ body {
 .main-content {
   padding: 1rem;
 }
+.copyrightPctest {
+  text-size-adjust: 100%;
+  letter-spacing: 2px;
+}
 
 /** Navbar */
 .navbar {
@@ -169,26 +219,32 @@ body {
   color: #ffffff;
   font-weight: 600;
 
-  .navContainer, ul, li {
+  .navContainer,
+  ul,
+  li {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: auto;
-    
-    
     margin: auto;
   }
   .navbarLinks {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    align-items: center;
   }
-  .navbarLinks .navbarLink a {
-    padding: 7px;
-    // margin: 0 10px;
+  .navbarLinks .navbarLink {
+    padding: 0 15px 0 15px; 
   }
   .navbarLink > a {
     color: var(--navbar-color);
     text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0;
+
+    
   }
 }
 .burger {
@@ -222,6 +278,35 @@ body {
 ul {
   list-style-type: none;
 }
+
+/*****************************
+** Navbar recherche **********
+******************************/
+#branding .imgAccueil {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: -5px;
+
+  #searchform {
+    position: absolute;
+    top: 3.8em;
+    right: 7.6%;
+    text-align: right;
+    top: auto;
+    bottom: -27px;
+    max-width: 195px;
+    height: 32px;
+  }
+}
+#searchsubmit {
+  display: none;
+}
+
+/*****************************
+** Navbar burger **********
+******************************/
+
 .imgAccueil:hover {
   width: 100%;
   height: auto;
@@ -290,9 +375,10 @@ La checkbox .kmNavContainer {
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 768px) { 
-  .imgAccueil{
-width: 100%;
-}
+
+@media screen and (max-width: 768px) {
+  .imgAccueil {
+    width: 100%;
+  }
 }
 </style>

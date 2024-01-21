@@ -1,5 +1,20 @@
 <template>
   <footer>
+    <div class="containerLogo">
+       
+      <div class="logoPctest">
+        <img
+          style="height: 5rem; width: 5rem"
+          x="0"
+          y="0"
+          height="100%"
+          width="100%"
+          src="../assets/22Capture.png"
+          alt="logo pctest"
+        />
+       
+      </div>
+    </div>
     <div class="containerFooter">
       <div class="textFooter">
         <h3>Pctest.fr </h3>
@@ -12,10 +27,9 @@
         <br />
         <h3>Zone d'intervention</h3>
         <p>
-          83000 TOULON Et sa périphérie
+          83000 TOULON <br> Et sa périphérie
           <br />
-          Lundi au Vendredi 8h00 17h00 <br>Samedi 9h00 12h00 <br />Port : 06 35 21
-          25 31
+          Lundi au Vendredi <br> 8h00 17h00 <br>Samedi 9h00 12h00 
         </p>
         <br />
       </div>
@@ -25,23 +39,9 @@
         <h4>https://www.recoveo.com/</h4>
         <br />
       </div>
+     
     </div>
-    <div class="containerLogo">
-      <div class="logoPctest">
-        <img
-          style="height: 5rem; width: 5rem"
-          x="0"
-          y="0"
-          height="100%"
-          width="100%"
-          src="../assets/22Capture.png"
-          alt="logo pctest"
-        />
-        <div class="logoPctest">
-          <span>© 2024 Pctest.fr Tous droits réservés.</span>
-        </div>
-      </div>
-    </div>
+    
   </footer>
 </template>
 
@@ -54,6 +54,7 @@ export default {
 <style lang="scss" scoped>
 .containerFooter {
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   width: 50%;
   padding: 1rem;
@@ -66,6 +67,7 @@ export default {
   flex-direction: column;
   margin: auto;
   color: #ffffff;
+  letter-spacing: 0.5px;
 }
 .containerLogo {
   display: flex;
