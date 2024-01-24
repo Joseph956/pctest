@@ -1,23 +1,23 @@
 {
-    "development": {
-        "username": "joseph",
-        "password": "user",
-        "database": "db_pctest",
-        "host": "localhost",
-        "dialect": "mysql"
-    },
-    "test": {
-        "username": "joseph",
-        "password": "user",
-        "database": "database_pctest",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
-    },
-    "production": {
-        "username": "joseph",
-        "password": "user",
-        "database": "database_pctest_production",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
-    }
+  "development": {
+    "username": "joseph",
+    "password": "user",
+    "database": "db_dev_pctest-site",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "joseph",
+    "password": "user",
+    "database": "db_test_pctest-site",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "joseph",
+    "password": "user",
+    "database": "db_prod_pctest-site",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
 }
