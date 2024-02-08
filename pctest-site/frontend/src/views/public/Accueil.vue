@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import Navbar from "@/views/Navbar.vue";
-import Footteur from "@/views/Footteur.vue";
+import Navbar from "@/views/public/Navbar.vue";
+import Footteur from "@/views/public/Footteur.vue";
 export default {
   name: "Accueil",
   data() {
@@ -75,7 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .present {
-  width: 50%;
+  width: 55%;
   margin: auto;
   text-align: justify;
   padding: 1rem;

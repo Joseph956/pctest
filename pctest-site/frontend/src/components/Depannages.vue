@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Accueil from "@/views/Accueil.vue";
+import Accueil from "@/views/public/Accueil.vue";
 export default {
   name: "Depannages",
   components: {

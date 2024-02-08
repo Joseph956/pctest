@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <body>
       <header id="branding">
         <!-- Image de fond -->
@@ -57,22 +58,15 @@
 
         <!-- <div> -->
         <!-- Image d'accueil -->
-        <a href="/">
-          <img
-            class="imgAccueil"
-            style="width: 50%; height: auto"
-            x="0"
-            y="0"
-            height="100"
-            width="100"
-            id="imgBottomAvatarPctest"
-            alt="Vue logo"
-            src="@/assets/newdepan02-1.jpg"
-          />
+        <a href="/blog">
+          <img class="imgAccueil" style="width: 55%; height: auto" x="0" y="0" height="100" width="100"
+            id="imgBottomAvatarPctest" alt="Vue logo" src="../../assets/newdepan02-1.jpg" />
         </a>
         <!-- Copyright -->
         <div class="copyrightPctest">
-          <span><h6>© 2024 Copyright Pctest.fr Tous droits réservés.</h6></span>
+          <span>
+            <h6> <b>© 2024 Copyright Pctest.fr Tous droits réservés.</b> </h6>
+          </span>
         </div>
         <!--Barre de navigation  -->
         <nav class="navbar dark-mode" role="navigation">
@@ -96,29 +90,16 @@
               <li class="navbarLink">
                 <router-link to="/about">A propos</router-link>
               </li>
-              <!-- Bouton de recherche -->
-              <form
-                action="http://localhost:3001/"
-                method="get"
-                id="searchform"
-              >
-                <label for="search" class="assistive-text"></label>
-                <input
-                  type="search"
-                  id="search"
-                  placeholder="Recherche "
-                  value=""
-                  onchange="searchPage()"
-                />
-                <!-- <input type="text" name="s" id="search" class="field" placeholder="Recherche"> -->
-                <input
-                  type="submit"
-                  class="submit"
-                  name="submit"
-                  id="searchsubmit"
-                  value="Recherche"
-                />
-              </form>
+              <!-- Formulaire de recherche -->
+              <div class="only-search with-image">
+                <form method="get" id="searchform" action="http://localhost:8080/">
+                  <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+                  <label for="s" class="assistive-text">Recherche</label>
+                  <input type="text" class="field" name="s" id="s" placeholder="Recherche" />
+                  <input type="submit" class="submit" name="submit" id="searchsubmit" value="Recherche" />
+                </form>
+              </div>
+              <!-- Formulaire de recherche -->
             </ul>
             <div class="only-search width-image">
               <button class="burger">
@@ -138,7 +119,7 @@
 </template>
 
 <script>
-import Footteur from "@/views/Footteur.vue";
+import Footteur from "@/views/public/Footteur.vue";
 export default {
   name: "Navbar",
   components: {
@@ -156,12 +137,12 @@ export default {
       var a = document.getElementById("search").value;
       if (
         (a == "ordinateurs",
-        "tablettes",
-        "peripheriques",
-        "imprimantes",
-        "maintenance",
-        "depannages",
-        "services")
+          "tablettes",
+          "peripheriques",
+          "imprimantes",
+          "maintenance",
+          "depannages",
+          "services")
       ) {
         window.location.href = "depannages/";
       }
@@ -179,6 +160,7 @@ export default {
 :root {
   --font-size: 1rem;
 }
+
 /** Reset */
 * {
   margin: 0;
@@ -186,6 +168,7 @@ export default {
   outline: none;
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
 }
@@ -196,9 +179,11 @@ body {
   font-family: "Leckerli One";
   font-size: var(--font-size);
 }
+
 .main-content {
   padding: 1rem;
 }
+
 .copyrightPctest {
   text-size-adjust: 100%;
   letter-spacing: 2px;
@@ -212,7 +197,7 @@ body {
   font-size: 1.2rem;
   background: var(--navbar-bg-color);
   color: var(--navbar-color);
-  width: 50%;
+  width: 55%;
   margin: auto;
   background-color: #1b3443;
   text-decoration-color: #ffffff;
@@ -227,15 +212,45 @@ body {
     justify-content: space-evenly;
     margin: auto;
   }
+
   .navbarLinks {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
+
   .navbarLinks .navbarLink {
-    padding: 0 15px 0 15px; 
+    padding: 0 15px 0 15px;
   }
-  .navbarLink > a {
+
+  .navbarLinks .whith-image #searchform {
+    top: auto;
+    bottom: -27px;
+    max-width: 195px;
+    height: 32px;
+  }
+  .assistive-text, .screen-reader-text {
+    position: absolute!important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+}
+.navbarLinks .only-search #s {
+    background-color: rgba( 255, 255, 255, 0.4 );
+}
+input #s {
+    // background: url(images/search.png)no-repeat 5px 6px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 22px;
+    line-height: 1.2em;
+    padding: 4px 10px 4px 28px;
+}
+
+  .navbarLink>a {
     color: var(--navbar-color);
     text-decoration: none;
     letter-spacing: 2px;
@@ -244,12 +259,14 @@ body {
     position: relative;
     padding: 0;
 
-    
+
   }
 }
+
 .burger {
   display: none;
 }
+
 /** Small devices */
 
 /** Toggle menu */
@@ -258,7 +275,7 @@ body {
 
 /** Médium devices */
 @media screen and (min-width: 768px) {
-  .navbarLink > a::after {
+  .navbarLink>a::after {
     display: block;
     content: "";
     width: 0;
@@ -266,7 +283,8 @@ body {
     background: var(--navbar-color);
     transition: width 0.4s;
   }
-  .navbarLink a:hover > a::after {
+
+  .navbarLink a:hover>a::after {
     width: 100%;
   }
 }
@@ -275,6 +293,7 @@ body {
   font-family: "Leckerli One";
   overflow: hidden;
 }
+
 ul {
   list-style-type: none;
 }
@@ -299,6 +318,7 @@ ul {
     height: 32px;
   }
 }
+
 #searchsubmit {
   display: none;
 }
@@ -315,14 +335,17 @@ ul {
   color: blue;
   border-color: blue;
 }
+
 .kmContainer {
   max-width: 1050px;
   width: 90%;
   margin: auto;
+
   .kmMenuNav {
     width: 100%;
     box-shadow: 0 1px 4px rgba(146, 161, 176, 0.293);
   }
+
   .kmNavContainer {
     position: relative;
     display: flex;
@@ -332,9 +355,11 @@ ul {
     width: 50%;
     margin: auto;
   }
+
   .kmNavItems {
     display: flex;
   }
+
   .kmMenuNav .kmNavItems a {
     text-decoration: none;
     color: #fff;
@@ -342,15 +367,18 @@ ul {
     font-size: 18px;
     padding: 7px;
   }
+
   .kmMenuNav .kmNavItems a:hover {
     color: #00d3f9;
   }
+
   .kmRowNav {
     // background-color: rgba(25, 25, 112, 0.7);
     background: linear-gradient(to left, #1cb5e0, #000046);
     // background: linear-gradient(to right, #000046, #1cb5e0);
   }
 }
+
 La checkbox .kmNavContainer {
   .kmCheckbox {
     cursor: pointer;
@@ -363,6 +391,7 @@ La checkbox .kmNavContainer {
     z-index: 5;
     opacity: 0;
   }
+
   .kmRowNav {
     position: absolute;
     height: 25px;

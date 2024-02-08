@@ -1,12 +1,11 @@
 const db = require("../models");
-const Post = db.posts;
-const Op = db.Sequelize.Op;
-const fs = require('fs');
+const Message = db.messages;
+// const Op = db.Sequelize.Op;
 const dotenv = require('dotenv');
 dotenv.config();
 
 // Create and Save a new Post
-exports.create = (req, res) => {
+exports.createMessage = (req, res) => {
     // Validate request
     if (!req.body.title) {
         res.status(400).send({
@@ -14,18 +13,15 @@ exports.create = (req, res) => {
         });
         return;
     }
-    // Create a Post
-    const post = {
+    // Create a Message
+    // let messageObject = req.body;
+    const message = new Message({
+        // ...messageObject
         title: req.body.title,
-        surname: req.body.surname,
-        firstname: req.body.firstname,
-        email: req.body.email,
-        phone: req.body.phone,
-        subject: req.body.subject,
-        message: req.body.message,
-    };
-    // Save Post in the database
-    Post.create(post)
+        content: req.body.content,
+    });
+    // Save Message in the database
+    Message.create(message)
         .then(data => {
             res.send(data);
         })

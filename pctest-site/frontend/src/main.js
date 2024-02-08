@@ -2,12 +2,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-// import VueEditor from 'vue2-editor';
-// import Vue from 'vue';
-
-// Vue.use(VueEditor);
-
-// Vue.config.productionTip = false;
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+window.axios = require('axios');
 
 const app = createApp(App).use(router);
 app.use(store);

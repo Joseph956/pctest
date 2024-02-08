@@ -9,6 +9,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+//Connect to database
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
@@ -16,6 +17,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+//Load models
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -31,13 +33,19 @@ fs
     db[model.name] = model;
   });
 
+//Associate models
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
 
+//Add models
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+//Require models
+db.Users = require('../models/user')(sequelize, Sequelize);
+db.Messages = require('../models/message')(sequelize, Sequelize);
 
 module.exports = db;

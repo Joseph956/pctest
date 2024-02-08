@@ -1,0 +1,16 @@
+const path = require('path');
+
+module.exports = {
+    dialect: 'sqlite',
+    storage: path.resolve(__dirname, '..', '..', 'database.sqlite', 'config', 'database.json'),
+    'models': path.resolve(__dirname, '..', 'models'),
+    'seeders': path.resolve(__dirname, '..', 'seeders'),
+    'migrations': path.resolve(__dirname, '..', 'migrations'),
+    logging: false,
+    operatorsAliases: false,
+    define: {
+        timestamps: true,
+        underscored: true,
+        underscoredAll: true,
+    },
+};

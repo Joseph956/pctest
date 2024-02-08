@@ -3,7 +3,7 @@
     "username": "joseph",
     "password": "user",
     "database": "db_dev_pctest-site",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

@@ -1,0 +1,25 @@
+
+pctest.fr
+
+Applications intranet de pctest.fr
+
+Spécifications fonctionnelles
+
+1/ Intranet
+- Connexion
+- Déconnexion
+- Securisé les données de connexions
+- Session persistante
+
+2/ Page d'accueil Intranet
+- Profil user
+- Liste antéchronologique de tous ses posts
+
+3/ Création d'un post
+- Création texte + image
+- Modification
+- Suppression
+
+4/ Envoie du post par mail
+
+5/ Rôle admin

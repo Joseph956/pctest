@@ -8,20 +8,36 @@ module.exports = (sequelize, DataTypes) => {
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
-     */
+    */
     static associate(models) {
       // define association here
       User.hasMany(models.Message, {
-        foreignKey: 'idUSERS'
+        foreignKey: 'id'
       })
     }
   }
+
   User.init({
-    surname: DataTypes.STRING,
-    lastname: DataTypes.STRING,
-    email: DataTypes.STRING,
-    phone: DataTypes.STRING,
-    isAdmin: DataTypes.BOOLEAN
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
   }, {
     sequelize,
     modelName: 'User',

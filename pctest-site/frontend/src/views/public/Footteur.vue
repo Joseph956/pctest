@@ -1,21 +1,13 @@
 <template>
   <footer>
-    <div class="containerLogo">
-       
-      <div class="logoPctest">
-        <img
-          style="height: 5rem; width: 5rem"
-          x="0"
-          y="0"
-          height="100%"
-          width="100%"
-          src="../assets/22Capture.png"
-          alt="logo pctest"
-        />
-       
-      </div>
-    </div>
+    
     <div class="containerFooter">
+      <div class="containerLogo">
+        <div class="logoPctest">
+          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/22Capture.png"
+            alt="logo pctest" />
+        </div>
+      </div>
       <div class="textFooter">
         <h3>Pctest.fr </h3>
         <p>
@@ -56,7 +48,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  width: 50%;
+  width: 55%;
   padding: 1rem;
   text-align: justify;
   font-size: small;
@@ -66,7 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
-  color: #ffffff;
+  color: #f9f9f9;
   letter-spacing: 0.5px;
 }
 .containerLogo {
@@ -80,7 +72,7 @@ export default {
   // display: flex;  
   width: 50%;
   margin: auto;
-  background-color: #ffffff;
+  background-color: #1b3443;
   color: #1b3443;
 }
 </style>

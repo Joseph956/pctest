@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Navbar from '@/views/Navbar.vue';
-import Accueil from '@/views/Accueil.vue';
-import Depannages from '@/views/Depannages.vue';
-import Logitheque from '@/views/Logitheque.vue';
-import Tarifs from '@/views/Tarifs.vue';
-import Contact from '@/views/Contact.vue';
-import About from '@/views/About.vue';
+import Navbar from '@/views/public/Navbar.vue';
+import Accueil from '@/views/public/Accueil.vue';
+import Depannages from '@/views/public/Depannages.vue';
+import Logitheque from '@/views/public/Logitheque.vue';
+import Tarifs from '@/views/public/Tarifs.vue';
+import Contact from '@/views/public/Contact.vue';
+import About from '@/views/public/About.vue';
+import Blog from '@/views/public/Blog.vue';
 
 
 
@@ -44,6 +45,11 @@ const routes = [
         path: '/about',
         name: 'About',
         component: About,
+    },
+    {
+        path: '/blog',
+        name: 'blog',
+        component: Blog,
     },
 ]
 

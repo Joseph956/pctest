@@ -10,7 +10,7 @@
           y="0"
           height="100"
           width="100"
-          src="../assets/zz-18.webp"
+          src="../../assets/zz-18.webp"
           alt="logo pctest"
         />
       </div>
@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import Navbar from "@/views/Navbar.vue";
-import Footteur from "@/views/Footteur.vue";
+import Navbar from "@/views/public/Navbar.vue";
+import Footteur from "@/views/public/Footteur.vue";
 export default {
   name: "Tarifs",
 
@@ -86,7 +86,7 @@ export default {
 <style lang="scss" scoped>
 
 .tarifs {
-  width: 50%;
+  width: 55%;
   margin: auto;
   text-align: justify;
   padding: 1rem;
