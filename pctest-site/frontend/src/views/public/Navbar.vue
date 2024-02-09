@@ -238,10 +238,19 @@ body {
     width: 1px;
 }
 .navbarLinks .only-search #s {
-    background-color: rgba( 255, 255, 255, 0.4 );
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba( 255, 255, 255, 0.4 );
+  padding: 0.3rem 0 0.3rem 0;
+  color: #878787;
+  width: 100%;
+
+
 }
 input #s {
-    // background: url(images/search.png)no-repeat 5px 6px;
+    background: url("../../assets/all-mail.webp")no-repeat 5px 6px;
     -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: 14px;

@@ -8,7 +8,10 @@ h2 {
     font-family: 'latolight';
 }
 h3 {
-    font-family: 'latohairline';
+    font-family: 'latobold';
+}
+h4 {
+    font-family: 'latobold_italic';
 }
 p {
     font-family: 'latoregular';

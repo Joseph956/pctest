@@ -23,15 +23,14 @@
           <br>
           <p>Édité par le micro-entrepreneur Joseph
             ANGILERI, Technicien d'assistance informatique, 166 rue Marc baron
-            83000 TOULON.
-          </p>
-          <br>
-          <p>Joignable 06 35 21 25 31 ou par Courriel
+            83000 TOULON. Joignable 06 35 21 25 31 ou par Courriel
             angilerijo@gmail.com en cliquant sur le formulaire de contact du site
             pctest.fr.
           </p>
           <br>
-          <p>Siret n°880 616 818 00014. Dénomination sociale Joseph
+          <p><h4>Siret n°880 616 818 00014.</h4></p>
+          <p>
+            Dénomination sociale : <br>  Joseph
             ANGILERI – pctest.fr -.
           </p>
           <br />
@@ -58,8 +57,7 @@
           </p>
           <br>
           <p>
-            Toute commande de prestations de services effectuée par le micro-entrepreneur Joseph ANGILERI pour le compte
-            d'un client est soumise aux présentes conditions générales de vente.
+            Toute commande de prestations de services effectuée par le micro-entrepreneur Joseph ANGILERI pour le compte d'un client est soumise aux présentes conditions générales de vente.
           </p>
           <br>
           <p>Ce qui implique, que le client ait pris connaissance des présentes
@@ -225,7 +223,7 @@
             préalable ne soit nécessaire.
           </p>
           <br />
-          <h3>Article n°8 : Dommage et intérêts : </h3>
+          <strong><h3>Article n°8 : Dommage et intérêts : </h3></strong>
           <br />
           <p>
             Si dans les quinze jours qui suivent la mise en œuvre de la clauses n°6 «
@@ -348,6 +346,9 @@ h2 {
     padding: 1rem;
     text-align: justify;
     background-color: #f9f9f9;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    text-decoration: inderline;
   }
 }
 </style>
