@@ -1,13 +1,15 @@
 'use strict';
-
+const Sequelize = require('sequelize');
+const dotenv = require('dotenv');
+dotenv.config();
+// require("dotenv").config();
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
-const process = require('process');
+// const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+
 
 //Connect to database
 let sequelize;
@@ -16,6 +18,17 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+//Add models
+const db = {};
+// db.ROLES = ['user', 'admin', 'moderator'];
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+//Require models
+db.User = require('../models/user')(sequelize, Sequelize);
+db.Messages = require('../models/message')(sequelize, Sequelize);
+db.Role = require('../models/role')(sequelize, Sequelize);
 
 //Load models
 fs
@@ -40,12 +53,5 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-//Add models
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-//Require models
-db.Users = require('../models/user')(sequelize, Sequelize);
-db.Messages = require('../models/message')(sequelize, Sequelize);
 
 module.exports = db;

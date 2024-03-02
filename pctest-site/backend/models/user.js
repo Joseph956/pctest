@@ -28,6 +28,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
+      validator: {
+        isEmail: true
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     phone: {

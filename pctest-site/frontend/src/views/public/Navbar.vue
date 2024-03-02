@@ -73,7 +73,7 @@
           <div class="navContainer">
             <ul class="navbarLinks">
               <li class="navbarLink">
-                <router-link to="/accueil"> Accueil</router-link>
+                <router-link to="/"> Accueil</router-link>
               </li>
               <li class="navbarLink">
                 <router-link to="/depannages">Prestations </router-link>
@@ -89,6 +89,9 @@
               </li>
               <li class="navbarLink">
                 <router-link to="/about">A propos</router-link>
+              </li>
+              <li class="navbarLink">
+                <router-link to="/auth/login">Connexion</router-link>
               </li>
               <!-- Formulaire de recherche -->
               <div class="only-search with-image">
@@ -187,6 +190,7 @@ body {
 .copyrightPctest {
   text-size-adjust: 100%;
   letter-spacing: 2px;
+  margin-top: 5px;
 }
 
 /** Navbar */
@@ -199,10 +203,11 @@ body {
   color: var(--navbar-color);
   width: 55%;
   margin: auto;
-  background-color: #1b3443;
+  background-color: #0f2431;
   text-decoration-color: #ffffff;
   color: #ffffff;
   font-weight: 600;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 
   .navContainer,
   ul,
@@ -250,7 +255,8 @@ body {
 
 }
 input #s {
-    background: url("../../assets/all-mail.webp")no-repeat 5px 6px;
+    background: url("../../assets/04.webp")no-repeat 5px 6px;
+    background-color: rgba( 255, 255, 255, 0.4 );
     -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: 14px;
@@ -263,7 +269,7 @@ input #s {
     color: var(--navbar-color);
     text-decoration: none;
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     position: relative;
     padding: 0;
@@ -315,6 +321,7 @@ ul {
   height: auto;
   object-fit: cover;
   margin-bottom: -5px;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 
   #searchform {
     position: absolute;

@@ -22,7 +22,7 @@
             class="has-text-color has-background has-text-align-justify has-normal-font-size has-black-color has-white-background-color">
             <a rel="noreferrer noopener" aria-label="7z465  (ouverture dans un nouvel onglet)"
               href="http://prdownloads.sourceforge.net/sourceforge/sevenzip/7z465.exe" target="_blank"><span
-                style="text-decoration:underline;"><strong>7z465 </strong></span></a>: 7-Zip logiciel gratuit
+                style="text-decoration:underline;"><strong><span style="text-decoration:underline;">7z465</span> </strong></span></a>: 7-Zip logiciel gratuit
             d&rsquo;archivage de fichiers doté d&rsquo;un taux de compression très élevé.
           </p>
         </div>
@@ -77,12 +77,12 @@
         </div>
       </div>
       <!-- </article> -->
-      <div class="containerLogo">
+      <!-- <div class="containerLogo">
         <div class="logoPctest">
-          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/22Capture.png"
+          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/logoPctest.png"
             alt="logo pctest" />
         </div>
-      </div>
+      </div> -->
     </div>
     <Footteur />
   </div>
@@ -112,6 +112,7 @@ article.intro {
   width: 55%;
   margin: auto;
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
 
 .wp-block-media-text {
@@ -168,11 +169,12 @@ strong {
   margin: auto;
 }
 
-.logoPctest {
-  // display: flex;  
-  width: 50%;
-  margin: auto;
-  background-color: #f9f9f9;
-  color: #1b3443;
-}
+// .logoPctest {
+//   // display: flex;  
+//   width: 50%;
+//   margin: auto;
+//   background-color: #f9f9f9;
+//   color: #1b3443;
+  
+// }
 </style>

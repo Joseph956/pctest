@@ -4,12 +4,12 @@
     <div class="containerFooter">
       <div class="containerLogo">
         <div class="logoPctest">
-          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/22Capture.png"
+          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/logo_fond.png"
             alt="logo pctest" />
         </div>
       </div>
       <div class="textFooter">
-        <h3>Pctest.fr </h3>
+        <h5>Pctest.fr </h5>
         <p>
           
           Joseph ANGILERI <br>83000 TOULON <br> 06 35 21 25 31 <br />Siret 880 616 818 00014
@@ -17,7 +17,7 @@
       </div>
       <div class="textFooter">
         <br />
-        <h3>Zone d'intervention</h3>
+        <h5>Zone d'intervention</h5>
         <p>
           83000 TOULON <br> Et sa périphérie
           <br />
@@ -26,9 +26,9 @@
         <br />
       </div>
       <div class="textFooter">
-        <h3>Sites partenaires</h3>
-        <h4>https://www.jesuisreparateur.fr</h4>
-        <h4>https://www.recoveo.com/</h4>
+        <h5>Sites partenaires</h5>
+        <h6>https://www.jesuisreparateur.fr</h6>
+        <h6>https://www.recoveo.com/</h6>
         <br />
       </div>
      
@@ -52,7 +52,8 @@ export default {
   padding: 1rem;
   text-align: justify;
   font-size: small;
-  background-color: #1b3443;
+  background-color: #0f2431;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
 .textFooter {
   display: flex;

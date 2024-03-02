@@ -28,6 +28,9 @@ if (!user) {
       firstname: this.$user.firstname,
       lastname: this.$user.lastname,
       email: this.$user.email,
+      phone: this.$user.phone,
+      password: this.$user.password,
+      confirmPassword: this.$user.confirmPassword,
       roleId: this.$user.roleId,
       createdAt: this.$user.createdAt
 
@@ -72,9 +75,9 @@ export default createStore({
           return error;
         });
     },
-    createUser: ({ commit }, data) => {
+    createAccount: ({ commit }, data) => {
       commit('setStatus', 'loading');
-      return new Promise ((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         instance
           .post('auth/register', data)
           .then((response) => {
@@ -86,10 +89,24 @@ export default createStore({
             commit('setStatus', 'msgError');
             reject(error);
           });
-        
-      });
-    }
 
+      });
+    },
+    login: ({ commit }, user) => {
+      commit('setStatus', 'loading');
+      return new Promise((resolve, reject) => {
+        instance.post('auth/login', user)
+          .then((response) => {
+            commit('setStatus', 'success');
+            commit('logUser', response.data);
+            resolve(response);
+          }).catch((error) => {
+            commit('setStatus', 'error');
+            reject(error);
+            console.log(error);
+          });
+      });
+    },
   },
   modules: {
 

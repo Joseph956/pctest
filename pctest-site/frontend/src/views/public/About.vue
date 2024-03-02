@@ -12,13 +12,13 @@
       <div class="textVentesFlex">
         <div class="textVentes">
           <strong>
-            <h3>Préambule :</h3>
+            <h5>Préambule :</h5>
           </strong>
           <br />
           <p>
             Les conditions générales de ventes, et d'utilisation détaillées
             ci-dessous régissent les relations contractuelles de tout utilisateur
-            du site https://pctest.fr.
+            du site <a href="https://pctest.fr">https://pctest.fr</a> et ses clients.
           </p>
           <br>
           <p>Édité par le micro-entrepreneur Joseph
@@ -28,13 +28,11 @@
             pctest.fr.
           </p>
           <br>
-          <p><h4>Siret n°880 616 818 00014.</h4></p>
           <p>
-            Dénomination sociale : <br>  Joseph
-            ANGILERI – pctest.fr -.
+            Dénomination sociale : <br/> Joseph ANGILERI – pctest.fr -. <br/><strong>Siret n°880 616 818 00014.</strong>
           </p>
           <br />
-          <h3>Article n°1 : Objet</h3>
+          <h5>Article n°1 : Objet</h5>
           <br />
           <p>
             Les conditions générales de ventes et d'utilisation décrites ci-après
@@ -65,7 +63,7 @@
             mêmes conditions.
           </p>
           <br />
-          <h3>Article n°2 : Tarifs des prestations</h3>
+          <h5>Article n°2 : Tarifs des prestations</h5>
           <br />
           <p>
             Toute prestation commandée par un client au micro-entrepreneur Joseph
@@ -95,7 +93,7 @@
             293B du CGI.
           </p>
           <br />
-          <h3>Article n°3 : Lieux d'exécutions des prestations :</h3>
+          <h5>Article n°3 : Lieux d'exécutions des prestations :</h5>
           <br />
           <p>
             La prestation est effectuée sur le lieu choisi par le client en accord
@@ -126,7 +124,7 @@
             mentionnés sur le devis puis la facture en euros, et en hors taxes.
           </p>
           <br />
-          <h3>Article n°4 : Modalités de paiement :</h3>
+          <h5>Article n°4 : Modalités de paiement :</h5>
           <br />
           <p>
             Le règlement des prestations s'effectue au plus tard le dernier jour
@@ -180,11 +178,11 @@
             qui lui aura été demandé.
           </p>
           <br />
-          <h3>Article n°5 : Escompte :</h3>
+          <h5>Article n°5 : Escompte :</h5>
           <br />
           <p>Aucun escompte ne sera consenti en cas de paiement anticipé.</p>
           <br />
-          <h3>Article n°6 : Remises :</h3>
+          <h5>Article n°6 : Remises :</h5>
           <br />
           <p>
             Des remises pourront être octroyées par le micro-entrepreneur Joseph
@@ -193,7 +191,7 @@
             hors taxes.
           </p>
           <br />
-          <h3>Article n°7 : Retard de paiement : </h3>
+          <h5>Article n°7 : Retard de paiement : </h5>
           <br />
           <p>
             Si, le premier jour
@@ -223,7 +221,7 @@
             préalable ne soit nécessaire.
           </p>
           <br />
-          <strong><h3>Article n°8 : Dommage et intérêts : </h3></strong>
+          <strong><h5>Article n°8 : Dommage et intérêts : </h5></strong>
           <br />
           <p>
             Si dans les quinze jours qui suivent la mise en œuvre de la clauses n°6 «
@@ -232,7 +230,7 @@
             intérêts au profit du micro-entrepreneur Joseph ANGILERI.
           </p>
           <br />
-          <h3>Article n°9 : Livraison :</h3>
+          <h5>Article n°9 : Livraison :</h5>
           <br />
           <p>
             Dépannages à domicile : La livraison correspond à la fin de
@@ -248,7 +246,7 @@
             la charge de travail actuelle du micro-entrepreneur Joseph ANGILERI.
           </p>
           <br />
-          <h3>Article n°10 : Force majeure :</h3>
+          <h5>Article n°10 : Force majeure :</h5>
           <br />
           <p>
             La responsabilité du micro-entrepreneur Joseph ANGILERI ne pourra pas
@@ -281,7 +279,7 @@
           </p>
           <br>
           <p>
-          <h3>Article n° 11 : Compétence matérielle : </h3>
+          <h5>Article n° 11 : Compétence matérielle : </h5>
           <br>
           Tout litige relatif à l'interprétation et à l'exécution des présentes
           conditions générales de vente est soumis au droit français.
@@ -323,8 +321,7 @@ export default {
   src: local("Lato"), url("/public/fonts/Lato/Lato-Light.ttf") format("ttf");
 }
 
-h1,
-h2 {
+h1 {
   font-family: "Lato";
 }
 
@@ -333,6 +330,7 @@ h2 {
   margin: auto;
   padding: 1rem;
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 
   .textVentesFlex {
     display: flex;
@@ -342,9 +340,8 @@ h2 {
   .textVentes {
     width: 100%;
     margin: auto;
-    text-align: justify;
+    text-align: left;
     padding: 1rem;
-    text-align: justify;
     background-color: #f9f9f9;
     letter-spacing: 0.4px;
     line-height: 1.5;

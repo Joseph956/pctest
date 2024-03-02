@@ -116,6 +116,8 @@
                 </label>
               </div>
               <div class="contact-form_select-wrapper">
+
+                <!-- <label>Ouvrir la liste déroulante</label> -->
                 <select name="g419-demande" id="g419-demande" placeholder="Demande" v-model="demande"
                   v-on:input="checkValidity" class="select grunion-field" required aria-required="true">
                   <option value="RDV-dépannages à domicile">RDV dépannages à domicile</option>
@@ -312,11 +314,12 @@ export default {
   margin: auto;
   text-align: justify;
   background: #ffffff;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
 
 .formContact {
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 2rem 5rem 2rem 5rem;
 }
 
 .inputData {
@@ -330,10 +333,32 @@ export default {
   padding: 0.5rem;
   width: 100%;
 }
-
-select {
+.contact-form_select-wrapper {
   width: 100%;
-  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #968f8f;
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  label {
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    color: #000000;
+    font-weight: 400;
+    width: 25%;
+  }
+  
+  select {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+}
+.alert-info {
+    color: #004085;
+    background-color: #f9f9f9;
+    /* background-color: #ffffff; */
+    border-color: #ffffff;
 }
 
 #messUser {

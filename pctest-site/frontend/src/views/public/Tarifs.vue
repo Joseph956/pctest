@@ -91,6 +91,7 @@ export default {
   text-align: justify;
   padding: 1rem;
   background-color: #ffffff;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
   .logitheqLogo {
     display: flex;
     justify-content: center;
