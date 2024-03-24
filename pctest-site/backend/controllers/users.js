@@ -1,6 +1,7 @@
 const db = require("../models");
-const User = db.users;
-const Message = db.messages;
+const User = db.User;
+const Role = db.Role;
+const Message = db.Message;
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -27,20 +28,34 @@ exports.createUser = async (req, res) => {
         });
     };
 };
-
-exports.getAllUsers = async (req, res) => {
-    User.findAll({
-        user: (req.body.user),
-        attributes: ['id', 'firstname', 'lastname', 'email', 'phone', 'isAdmin', 'createdAt', 'updatedAt'],
-        include: [{
-            model: db.messages,
-            attributes: ['id', 'title', 'content', 'createdAt', 'updatedAt'],
-        }]
-    }).then(data => {
-        res.send(data);
-    }).catch(err => {
+// Retrieve all Users from the database.
+// Récupère tous les utilisateurs de la base de données.
+exports.getAllUsers = async (req, res) => {  // ok
+    try {
+        console.log('Fetching all users');
+        const user = await User.findAll({
+            attributes: ['id', 'firstname', 'lastname', 'email', 'phone', 'isAdmin', 'createdAt', 'updatedAt'],
+            include: [{
+                model: db.Message,
+                attributes: ['id', 'title', 'content', 'createdAt', 'updatedAt'],
+            }],
+        }).then((user) => {
+            if (!user) {
+                console.log('User not found with id ' + req.body.user);
+            } else {
+                res.status(200).json(user)
+            }           
+        }).catch((err) => {        
+            return res.status(404).send({
+               message: err.message || "User not found with id " + req.body.user
+            });
+        });
+        console.log('Sending users data');
+        res.send(user);
+    } catch (err) {
+        console.log('Error retrieving User with id=' + req.body.user + ': ' + err.message);
         res.status(500).send({
-            message: err.message || "Error retrieving User with id=" + id
-        })
-    })
+            message: err.message || "Error retrieving User with id=" + req.body.user
+        });
+    }
 };

@@ -52,7 +52,7 @@ const db = require('../../pctest-site/backend/models');
 const bcrypt = require("bcrypt");
 const User = db.User;
 const Role = db.Role;
-const Message = db.messages;
+const Message = db.Message;
 db.sequelize.sync()
     .then(() => {
         initial();

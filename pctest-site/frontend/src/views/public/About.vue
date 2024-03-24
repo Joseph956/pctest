@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Navbar />
-    <!-- <a href="/"><Accueil /></a> -->
+  <div>    
     <div class="containerTextVentes">
       <br />
       <h1>CGV et CGU</h1>
@@ -298,20 +296,13 @@
         </div>
       </div>
     </div>
-    <Footteur />
   </div>
 </template>
 
 <script>
-import Navbar from "@/views/public/Navbar.vue";
-import Footteur from "@/views/public/Footteur.vue";
+
 export default {
   name: "About",
-
-  components: {
-    Navbar,
-    Footteur,
-  },
 };
 </script>
 
@@ -326,8 +317,6 @@ h1 {
 }
 
 .containerTextVentes {
-  width: 55%;
-  margin: auto;
   padding: 1rem;
   background-color: #f9f9f9;
   box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;

@@ -1,7 +1,6 @@
-<div></div>
+
 <template>
-    <Navbar />
-    <div>
+    <div class="container">
         <h1>Blog actualités chez Pctest</h1>
           <h2>Articles informatifs</h2>
           <p>Partagez des articles informatifs (IT Connect a voir !!!) sur les dernières tendances, les conseils de maintenance etc...</p>
@@ -9,15 +8,16 @@
 </template>
 
 <script>
-import Navbar from "@/views/public/Navbar.vue";
+
 export default {
   name: "Blog",
-  components: {
-    Navbar,
-    // Navbar: () => import("@/views/public/Navbar.vue"),
-  }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.container {
+  padding: 3rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
+}
 </style>

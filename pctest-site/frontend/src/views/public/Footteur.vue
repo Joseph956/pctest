@@ -1,10 +1,9 @@
 <template>
-  <footer>
-    
+  <footer>    
     <div class="containerFooter">
       <div class="containerLogo">
         <div class="logoPctest">
-          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/logo_fond.png"
+          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100%" width="100%" src="../../assets/icons_pctest/logo_fond.png"
             alt="logo pctest" />
         </div>
       </div>
@@ -47,8 +46,6 @@ export default {
 .containerFooter {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
-  width: 55%;
   padding: 1rem;
   text-align: justify;
   font-size: small;
@@ -70,7 +67,6 @@ export default {
   margin: auto;
 }
 .logoPctest {
-  // display: flex;  
   width: 50%;
   margin: auto;
   background-color: #1b3443;

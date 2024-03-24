@@ -1,11 +1,10 @@
 <template>
   <div>
-    <Navbar />
     <div class="contact">
       <div action="http://localhost:3000/contact" method="post" class="contact-form commentsblock wp-block-contact-form-7"
         aria-label="Contact" novalidate>
         <div class="mailLogo">
-          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100" width="100" src="../../assets/all-mail.webp"
+          <img style="height: 5rem; width: 5rem" x="0" y="0" height="100" width="100" src="../../assets/icons_pages/all-mail.webp"
             alt="logo pctest" />
           <p class="has-text-align-center">
             <strong>
@@ -16,41 +15,43 @@
         <!-- Formulaire -->
         <!-- <form action="http://localhost:3000/contact" method="post"> -->
         <form action="https://formsubmit.co/fe89bc80562785bd975714d11ed0ccf4" method="post">
-          <!-- lastname -->
-          <div class="formContact">
-            <div class="formControlMess">
-              <div style class="grunion-field-name-wrap grunion-field-wrap">
-                <label for="g419-lastname" class="grunion-field-label lastname">
-                  Nom
-                  <span class="grunion-label-required" aria-hidden="true">(Obligatoire)</span>
-                </label>
+          <div class="containerFormContact" >
+            <!-- lastname -->
+            <div class="formContact">
+              <div class="formControlMess">
+                <div style class="grunion-field-name-wrap grunion-field-wrap">
+                  <label for="g419-lastname" class="grunion-field-label lastname">
+                    Nom
+                    <span class="grunion-label-required" aria-hidden="true">(Obligatoire)</span>
+                  </label>
+                </div>
+                <div class="inputData">
+                  <input id="lastname" type="text" placeholder="Nom" v-model="lastname" v-on:input="checkValidity"
+                    class="form-control_input" name="lastname" autocomplete="off" required />
+                </div>
+                <p id="message" class="alert alert-info text-danger">
+                  <small> {{ msgError }} </small>
+                </p>
               </div>
-              <div class="inputData">
-                <input id="lastname" type="text" placeholder="Nom" v-model="lastname" v-on:input="checkValidity"
-                  class="form-control_input" name="lastname" autocomplete="off" required />
-              </div>
-              <p id="message" class="alert alert-info text-danger">
-                <small> {{ msgError }} </small>
-              </p>
             </div>
-          </div>
-          <!-- firstname -->
-          <div class="formContact">
-            <div class="formControlMess">
-              <div style class="grunion-field-name-wrap grunion-field-wrap">
-                <label for="g419-firstname" class="grunion-field-label firstname">
-                  Prénom
-                  <span class="grunion-label-required" aria-hidden="true">(Obligatoire)</span>
-                </label>
+            <!-- firstname -->
+            <div class="formContact">
+              <div class="formControlMess">
+                <div style class="grunion-field-name-wrap grunion-field-wrap">
+                  <label for="g419-firstname" class="grunion-field-label firstname">
+                    Prénom
+                    <span class="grunion-label-required" aria-hidden="true">(Obligatoire)</span>
+                  </label>
+                </div>
+                <div class="inputData">
+                  <input id="firstname" type="text" placeholder="Prénom" v-model="firstname" v-on:input="checkValidity"
+                    class="form-control_input" name="firstname" autocomplete="off" required />
+                </div>
+                <p id="message" class="alert alert-info text-danger">
+                  <small> {{ msgError }} </small>
+                </p>
               </div>
-              <div class="inputData">
-                <input id="firstname" type="text" placeholder="Prénom" v-model="firstname" v-on:input="checkValidity"
-                  class="form-control_input" name="firstname" autocomplete="off" required />
-              </div>
-              <p id="message" class="alert alert-info text-danger">
-                <small> {{ msgError }} </small>
-              </p>
-            </div>
+            </div>            
           </div>
           <!-- Date d'envoi -->
           <div class="formContact">
@@ -165,24 +166,15 @@
         </form>
         <br />
       </div>
-
     </div>
-    <Footteur />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import Navbar from "@/views/public/Navbar.vue";
-import Footteur from "@/views/public/Footteur.vue";
 import axios from "axios";
 export default {
   name: "Contacts",
-
-  components: {
-    Navbar,
-    Footteur,
-  },
   data() {
     return {
       msgError: "",
@@ -310,13 +302,14 @@ export default {
 }
 
 .contact {
-  width: 55%;
-  margin: auto;
   text-align: justify;
   background: #ffffff;
   box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
-
+.containerFormContact {
+  display: flex;
+  flex-direction: row;
+}
 .formContact {
   border-radius: 1rem;
   margin: 2rem 5rem 2rem 5rem;
@@ -357,7 +350,6 @@ export default {
 .alert-info {
     color: #004085;
     background-color: #f9f9f9;
-    /* background-color: #ffffff; */
     border-color: #ffffff;
 }
 

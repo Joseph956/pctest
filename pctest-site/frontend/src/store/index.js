@@ -8,8 +8,8 @@ const instance = axios.create({
   timeout: 10000,
   headers: {
     'Accept': "application/json",
-    "Content-Type": "application/json",
-  }
+    "Content-Type": "application/json",  
+  },
 });
 let user = localStorage.getItem('user');
 if (!user) {
@@ -29,11 +29,8 @@ if (!user) {
       lastname: this.$user.lastname,
       email: this.$user.email,
       phone: this.$user.phone,
-      password: this.$user.password,
-      confirmPassword: this.$user.confirmPassword,
-      roleId: this.$user.roleId,
+      isAdmin: this.$user.isAdmin,
       createdAt: this.$user.createdAt
-
     };
   }
 };
@@ -42,21 +39,46 @@ if (!user) {
 export default createStore({
   state: {
     status: '',
+    user: '',
     user: {
-      id: -1,
+      userId: -1,
       token: '',
     },
     instance: instance,
+    user: [],
     users: [],
+    getUsers: [],
+    getStatus: '',
+    getUsersList: [],
+    user: user,
+    users: user,
+    userId: user.userId,
+    token: user.token,
+    firstname: user.firstname,
+    lastname: user.lastname,
+    email: user.email,
+    phone: user.phone,
+    createdAt: user.createdAt,
+    isAdmin: user.isAdmin,
 
+  },
+  getters: {
+    getStatus: (state) => {
+      return `${state.getUsersList}`;
+    },
   },
   mutations: {
     setStatus: function (state, status) {
       state.status = status;
     },
+    getUsers: function (state, users) {
+      // instance.defaults.headers.common['Authorization'] = user.token;
+      // localStorage.setItem('user', JSON.stringify(users));
+      state.users = users;
+    },
     logUser: function (state, user) {
-      instance.defaults.headers.common['Authorization'] = user.token;
-      localStorage.setItem('user', JSON.stringify(user));
+      // instance.defaults.headers.common['Authorization'] = user.token;
+      // localStorage.setItem('user', JSON.stringify(user));
       state.user = user;
     },
 
@@ -101,9 +123,22 @@ export default createStore({
             commit('logUser', response.data);
             resolve(response);
           }).catch((error) => {
+            commit('setStatus', 'error_login');
+            reject(error);
+          });
+      });
+    },
+    getUsers: ({ commit }, user) => {
+      commit('setStatus', 'loading');
+      return new Promise((resolve, reject) => {
+        instance.get('/users', user)
+          .then((response) => {
+            commit('setStatus', 'success');
+            commit('getUsers', response.data);
+            resolve(response);
+          }).catch((error) => {
             commit('setStatus', 'error');
             reject(error);
-            console.log(error);
           });
       });
     },

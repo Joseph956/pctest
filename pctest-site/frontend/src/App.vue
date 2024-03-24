@@ -11,7 +11,6 @@
 <script>
 export default {
   name: "App",
-  components: {},
 };
 </script>
 
@@ -32,7 +31,7 @@ export default {
 }
 body {
   background: url("./assets/Fond-Gris.jpg") no-repeat center fixed;
-  // background: url("./assets/nuagedemots.jpg") repeat center fixed;
+  background-size: cover;
   background-position: center;
   background-size: cover;
   margin: auto;
@@ -41,9 +40,6 @@ body {
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  // min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -52,20 +48,18 @@ body {
   font-family: "latobold_italic";
 }
 .auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  // height: 100vh;
+  height: 10vh;
   margin: auto;
 }
-// .auth-wrapper {
-//   display: flex;
-//   justify-content: center;
-// }
 .auth-inner {
-  // width: 700px;
-  margin: auto;
-  /* background: #4e5166; */
-  // background: #7c7e8d;
-  // box-shadow: 0px 14px 80px rgba(26, 8, 11, 0.7);
+  // display: flex;
+  width: 1095px; 
+  height: 40%;
+  // margin: auto;
   padding: 2.5rem 55px 45px 55px;
   border-radius: 15px;
   transition: all 0.3s;
@@ -82,15 +76,5 @@ body {
   padding-bottom: 5px;
   font-size: large;
 }
-// .auth-inner {
-//   width: 700px;
-//   margin: auto;
-//   /* background: #4e5166; */
-//   background: #7c7e8d;
-//   box-shadow: 0px 14px 80px rgba(26, 8, 11, 0.7);
-//   padding: 2.5rem 55px 45px 55px;
-//   border-radius: 15px;
-//   transition: all 0.3s;
-//   outline: none;
-// }
+
 </style>

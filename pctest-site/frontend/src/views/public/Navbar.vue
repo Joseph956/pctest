@@ -58,9 +58,14 @@
 
         <!-- <div> -->
         <!-- Image d'accueil -->
-        <a href="/blog">
-          <img class="imgAccueil" style="width: 55%; height: auto" x="0" y="0" height="100" width="100"
-            id="imgBottomAvatarPctest" alt="Vue logo" src="../../assets/newdepan02-1.jpg" />
+        <a href="../../public/blog">
+          <img class="imgAccueil" style=" height: auto; 
+            object-fit: cover; 
+            margin: auto; 
+            border-color: blue; 
+            border-style: solid; 
+            border-width: auto" x="0" y="0" height="100" width="100" id="imgBottomAvatarPctest" alt="Vue logo"
+            src="../../assets/icons_pctest/newdepan02-1.jpg" />
         </a>
         <!-- Copyright -->
         <div class="copyrightPctest">
@@ -73,35 +78,37 @@
           <div class="navContainer">
             <ul class="navbarLinks">
               <li class="navbarLink">
-                <router-link to="/"> Accueil</router-link>
+                <router-link to="/public/accueil"> Accueil</router-link>
               </li>
               <li class="navbarLink">
-                <router-link to="/depannages">Prestations </router-link>
+                <router-link to="/public/depannages">Prestations </router-link>
               </li>
               <li class="navbarLink">
-                <router-link to="/logitheque">Logithèque</router-link>
+                <router-link to="/public/logitheque">Logithèque</router-link>
               </li>
               <li class="navbarLink">
-                <router-link to="/tarifs">Tarifs</router-link>
+                <router-link to="/public/tarifs">Tarifs</router-link>
               </li>
               <li class="navbarLink">
-                <router-link to="/contact">Contact </router-link>
+                <router-link to="/public/contact">Contact </router-link>
               </li>
               <li class="navbarLink">
-                <router-link to="/about">A propos</router-link>
+                <router-link to="/public/about">A propos</router-link>
               </li>
               <li class="navbarLink">
                 <router-link to="/auth/login">Connexion</router-link>
               </li>
               <!-- Formulaire de recherche -->
-              <div class="only-search with-image">
+              <!-- <div class="only-search with-image">
                 <form method="get" id="searchform" action="http://localhost:8080/">
                   <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
                   <label for="s" class="assistive-text">Recherche</label>
                   <input type="text" class="field" name="s" id="s" placeholder="Recherche" />
                   <input type="submit" class="submit" name="submit" id="searchsubmit" value="Recherche" />
                 </form>
-              </div>
+              </div> -->
+              <input type="search" id="search" value="" placeholder="Recherche" onchange="searchPage()" />
+              <button @click="searchPage()"></button>
               <!-- Formulaire de recherche -->
             </ul>
             <div class="only-search width-image">
@@ -133,21 +140,12 @@ export default {
   //   },
 
   methods: {
-    // searchPage() {
-    //   var a = document.getElementById("search").value;
-    // }
     searchPage: function () {
       var a = document.getElementById("search").value;
       if (
-        (a == "ordinateurs",
-          "tablettes",
-          "peripheriques",
-          "imprimantes",
-          "maintenance",
-          "depannages",
-          "services")
+        (a === "depannages")
       ) {
-        window.location.href = "depannages/";
+        windows.open("/public/depannages");
       }
     },
   },
@@ -190,7 +188,7 @@ body {
 .copyrightPctest {
   text-size-adjust: 100%;
   letter-spacing: 2px;
-  margin-top: 5px;
+  // margin-top: 5px;
 }
 
 /** Navbar */
@@ -201,8 +199,6 @@ body {
   font-size: 1.2rem;
   background: var(--navbar-bg-color);
   color: var(--navbar-color);
-  width: 55%;
-  margin: auto;
   background-color: #0f2431;
   text-decoration-color: #ffffff;
   color: #ffffff;
@@ -225,7 +221,7 @@ body {
   }
 
   .navbarLinks .navbarLink {
-    padding: 0 15px 0 15px;
+    padding: 0 10px 0 10px;
   }
 
   .navbarLinks .whith-image #searchform {
@@ -234,36 +230,40 @@ body {
     max-width: 195px;
     height: 32px;
   }
-  .assistive-text, .screen-reader-text {
-    position: absolute!important;
+
+  .assistive-text,
+  .screen-reader-text {
+    position: absolute !important;
     clip: rect(1px 1px 1px 1px);
-    clip: rect(1px,1px,1px,1px);
+    clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
     height: 1px;
     width: 1px;
-}
-.navbarLinks .only-search #s {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba( 255, 255, 255, 0.4 );
-  padding: 0.3rem 0 0.3rem 0;
-  color: #878787;
-  width: 100%;
+  }
+
+  .navbarLinks .only-search #s {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.3rem 0 0.3rem 0;
+    color: #878787;
+    width: 100%;
 
 
-}
-input #s {
-    background: url("../../assets/04.webp")no-repeat 5px 6px;
-    background-color: rgba( 255, 255, 255, 0.4 );
+  }
+
+  input #s {
+    background: url("../../assets/icons_pages/004.webp")no-repeat 5px 6px;
+    background-color: rgba(255, 255, 255, 0.4);
     -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: 14px;
     height: 22px;
     line-height: 1.2em;
     padding: 4px 10px 4px 28px;
-}
+  }
 
   .navbarLink>a {
     color: var(--navbar-color);

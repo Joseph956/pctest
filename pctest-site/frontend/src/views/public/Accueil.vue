@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div>
       <div class="present">
         <div class="textPresent">
@@ -11,10 +10,9 @@
             Joseph ANGILERI 06 35 21 25 31 / Dépannages / Assistance / Conseils et
             prestations de services informatiques à domicile
           </p>
-        
           <p>
-            Sur la ville de Toulon et sa périphérie pour la réparation, la
-            maintenance ou la mise en service de vos appareils informatiques,
+            Sur la ville de Toulon et sa périphérie pour la <em>reparation</em>, la
+            <em>mise en service</em>maintenance ou la mise en service de vos appareils informatiques,
             Ordinateurs / Tablettes / Périphériques / imprimantes.
           </p>
           <p>
@@ -30,13 +28,12 @@
       </div>
       <!-- </main> -->
     </div>
-    <Footteur />
   </div>
 </template>
 
 <script>
-import Navbar from "@/views/public/Navbar.vue";
-import Footteur from "@/views/public/Footteur.vue";
+// import Navbar from "@/views/public/Navbar.vue";
+// import Footteur from "@/views/public/Footteur.vue";
 export default {
   name: "Accueil",
   data() {
@@ -52,37 +49,33 @@ export default {
       this.isValidUsername = regex.test(this.username);
     },
   },
-  components: {
-    Navbar,
-    Footteur,
-  },
 };
 </script>
 
 <style lang="scss" scoped>
 .present {
-  width: 55%;
-  margin: auto;
   text-align: center;
   padding: 1rem;
   background-color: #ffffff;
   box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
 
+h1 {
+  font-family: "Lato";
+}
+
 .textPresent {
-  // display: flex;
   padding: 1rem;
   margin: 2rem 1rem 2rem 1rem;
   border-radius: 1rem;
   text-align: center;
   background-color: #ffffff;
 
-  // box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
   p {
     font-family: "Lato";
     font-size: 20px;
     text-align: justify;
-    padding: 2rem;
+    padding: 1rem 2rem 0 2rem;
     color: #000000;
     line-height: 1.5;
     font-weight: 400;
