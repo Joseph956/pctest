@@ -20,8 +20,9 @@
           <p
             class="has-text-color has-background has-text-align-justify has-normal-font-size has-black-color has-white-background-color">
             <a rel="noreferrer noopener" aria-label="7z465  (ouverture dans un nouvel onglet)"
-              href="http://prdownloads.sourceforge.net/sourceforge/sevenzip/7z465.exe" target="_blank"><span
-                style="text-decoration:underline;"><strong><span style="text-decoration:underline;">7z465</span> </strong></span></a>: 7-Zip logiciel gratuit
+              href="http://prdownloads.sourceforge.net/sourceforge/sevenzip/7z465.exe" target="_blank"><strong><span
+                  color="#134b6f" >7z465</span>
+              </strong></a> : 7-Zip logiciel gratuit
             d&rsquo;archivage de fichiers doté d&rsquo;un taux de compression très élevé.
           </p>
         </div>
@@ -45,7 +46,8 @@
           <p
             class="has-text-color has-background has-text-align-justify has-normal-font-size has-black-color has-white-background-color">
             <a rel="noreferrer noopener" href="http://get.videolan.org/vlc/1.0.5/win32/vlc-1.0.5-win32.exe"
-              target="_blank"><strong><span style="text-decoration:underline;">VLC 1.0.5 pour Windows</span></strong></a>
+              target="_blank"><strong><span style="text-decoration:underline;">VLC 1.0.5 pour
+                  Windows</span></strong></a>
             : Un lecteur multimédia gratuit et open source.
           </p>
         </div>
@@ -68,8 +70,8 @@
         </figure>
         <div class="wp-block-media-text__content">
           <p class="has-text-color has-background has-normal-font-size has-black-color has-white-background-color">
-            <a href="https://get.adobe.com/fr/reader/otherversions/" target="_blank"
-              rel="noreferrer noopener"><strong><span style="text-decoration:underline;">Adobe Acrobat Reader
+            <a href="https://get.adobe.com/fr/reader/" target="_blank" rel="noreferrer noopener"><strong><span
+                  style="text-decoration:underline;">Adobe Acrobat Reader
                   DC_fr_FR</span></strong>
             </a> : Visualisez, imprimez, annotez vos documents PDF.
           </p>
@@ -135,6 +137,7 @@ article.intro {
   margin-bottom: 0;
   background-color: #ffffff;
   color: #1b3443;
+  text-align: justify;
 }
 
 .wp-block-media-text .wp-block-media-text__content {
@@ -148,9 +151,11 @@ article.intro {
   margin: 5rem;
   word-break: break-word;
 }
+
 strong {
   font-weight: 900;
 }
+
 .containerLogo {
   display: flex;
   flex-direction: column;

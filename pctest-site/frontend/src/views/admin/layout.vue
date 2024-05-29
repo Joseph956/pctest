@@ -26,7 +26,7 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss" scoped>
 .ad_container_layout {
     display: flex;
     width: 100%;

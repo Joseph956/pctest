@@ -1,39 +1,31 @@
-<template>
-  <div>
-    <div>
+<template>  
       <div class="present">
+        <h1>Bienvenue chez pctest !</h1>
         <div class="textPresent">
-          <h1>Bienvenue chez pctest !</h1>
           <p>
-            Ordinateurs / Tablettes / Périphériques / imprimantes /
-            Maintenance / Dépannages / Assistance / Conseils et prestations de services.
-            Joseph ANGILERI 06 35 21 25 31 / Dépannages / Assistance / Conseils et
-            prestations de services informatiques à domicile
+            Joseph ANGILERI 06 35 21 25 31 / Ordinateurs / Tablettes / Périphériques / imprimantes / Maintenance / Depannages / Assistance / Conseils et prestations de services informatiques à domicile.
+
           </p>
           <p>
-            Sur la ville de Toulon et sa périphérie pour la <em>reparation</em>, la
-            <em>mise en service</em>maintenance ou la mise en service de vos appareils informatiques,
-            Ordinateurs / Tablettes / Périphériques / imprimantes.
+            Sur la ville de Toulon et sa périphérie pour la <strong>reparation</strong> , la mise à jour, la maintenance ou la mise en service de vos appareils informatiques.
           </p>
           <p>
-            L'onglet « Contact » permet une prise en compte rapide de votre demande
-            et le rappel dans la première heure pour une intervention à domicile.
+            L'onglet « Contact » permet une prise en compte rapide de votre demande et le rappel dans la première heure pour une intervention à domicile.
           </p>
           <p>
-            En atelier toutes les prestations sont proposées sur devis estimatif
-            détaillé et chiffré fait avant toutes prises en charges de vos
-            appareils.
+             <strong>A domicile : </strong> Un devis détaillé personnalisé est produit pour une prestation ou un ensemble de prestations dont le prix total est supérieur à 100€ ou sur simple demande quelqu'en soit le montant.
+          </p>
+          <p>
+            <strong>En atelier :</strong> Toutes les prestations sont proposées sur devis estimatif, détaillé et chiffré. La validation de ce devis par le client est nécessaire avant toutes prises en charges de vos appareils.
           </p>
         </div>
       </div>
-      <!-- </main> -->
-    </div>
-  </div>
 </template>
 
 <script>
 // import Navbar from "@/views/public/Navbar.vue";
 // import Footteur from "@/views/public/Footteur.vue";
+import { mapState } from "vuex";
 export default {
   name: "Accueil",
   data() {
@@ -41,6 +33,9 @@ export default {
       username: "",
       isValidUsername: false,
     };
+  },
+  computed: {
+    ...mapState(["status"]),
   },
   methods: {
     checkValidity() {
@@ -60,13 +55,13 @@ export default {
   box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 }
 
-h1 {
-  font-family: "Lato";
-}
+// h1 {
+//   font-family: "Lato";
+// }
 
 .textPresent {
-  padding: 1rem;
-  margin: 2rem 1rem 2rem 1rem;
+  padding: 0 1rem;
+  margin: 0 1rem 0 1rem;
   border-radius: 1rem;
   text-align: center;
   background-color: #ffffff;

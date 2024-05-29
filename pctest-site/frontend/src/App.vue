@@ -9,14 +9,13 @@
 </template>
 
 <script>
+
 export default {
   name: "App",
 };
 </script>
 
-<style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=lato+Sans:400,500,600,700,800");
-
+<style lang="scss" >
 * {
   margin: 0;
   padding: 0;
@@ -56,11 +55,8 @@ body {
   margin: auto;
 }
 .auth-inner {
-  // display: flex;
-  width: 1095px; 
+  width: 1000px; 
   height: 40%;
-  // margin: auto;
-  padding: 2.5rem 55px 45px 55px;
   border-radius: 15px;
   transition: all 0.3s;
   outline: none;

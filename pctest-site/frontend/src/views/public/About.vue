@@ -1,5 +1,5 @@
 <template>
-  <div>    
+  <div>
     <div class="containerTextVentes">
       <br />
       <h1>CGV et CGU</h1>
@@ -27,7 +27,8 @@
           </p>
           <br>
           <p>
-            Dénomination sociale : <br/> Joseph ANGILERI – pctest.fr -. <br/><strong>Siret n°880 616 818 00014.</strong>
+            Dénomination sociale : <br /> Joseph ANGILERI – pctest.fr -. <br /><strong>Siret n°880 616 818
+              00014.</strong>
           </p>
           <br />
           <h5>Article n°1 : Objet</h5>
@@ -53,7 +54,8 @@
           </p>
           <br>
           <p>
-            Toute commande de prestations de services effectuée par le micro-entrepreneur Joseph ANGILERI pour le compte d'un client est soumise aux présentes conditions générales de vente.
+            Toute commande de prestations de services effectuée par le micro-entrepreneur Joseph ANGILERI pour le compte
+            d'un client est soumise aux présentes conditions générales de vente.
           </p>
           <br>
           <p>Ce qui implique, que le client ait pris connaissance des présentes
@@ -205,7 +207,7 @@
           </p>
           <br />
         </div>
-        <div class="textVentes">          
+        <div class="textVentes">
           <p>
             Le taux de la pénalité de retard est calculé sur la
             base du taux refi de la BCE, majoré du nombre de points fixé par la
@@ -219,7 +221,9 @@
             préalable ne soit nécessaire.
           </p>
           <br />
-          <strong><h5>Article n°8 : Dommage et intérêts : </h5></strong>
+          <strong>
+            <h5>Article n°8 : Dommage et intérêts : </h5>
+          </strong>
           <br />
           <p>
             Si dans les quinze jours qui suivent la mise en œuvre de la clauses n°6 «
@@ -276,8 +280,8 @@
             générales de vente.
           </p>
           <br>
-          <p>
           <h5>Article n° 11 : Compétence matérielle : </h5>
+          <p>
           <br>
           Tout litige relatif à l'interprétation et à l'exécution des présentes
           conditions générales de vente est soumis au droit français.

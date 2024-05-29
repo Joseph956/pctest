@@ -58,7 +58,7 @@
 
         <!-- <div> -->
         <!-- Image d'accueil -->
-        <a href="../../public/blog">
+        <a href="../../public/Blog">
           <img class="imgAccueil" style=" height: auto; 
             object-fit: cover; 
             margin: auto; 
@@ -70,7 +70,8 @@
         <!-- Copyright -->
         <div class="copyrightPctest">
           <span>
-            <h6> <b>© 2024 Copyright Pctest.fr Tous droits réservés.</b> </h6>
+            <small>© 2024 Copyright Pctest.fr Tous droits réservés.</small>
+            <h6> <b></b> </h6>
           </span>
         </div>
         <!--Barre de navigation  -->
@@ -98,19 +99,21 @@
               <li class="navbarLink">
                 <router-link to="/auth/login">Connexion</router-link>
               </li>
-              <!-- Formulaire de recherche -->
-              <!-- <div class="only-search with-image">
-                <form method="get" id="searchform" action="http://localhost:8080/">
-                  <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-                  <label for="s" class="assistive-text">Recherche</label>
-                  <input type="text" class="field" name="s" id="s" placeholder="Recherche" />
-                  <input type="submit" class="submit" name="submit" id="searchsubmit" value="Recherche" />
-                </form>
-              </div> -->
-              <input type="search" id="search" value="" placeholder="Recherche" onchange="searchPage()" />
-              <button @click="searchPage()"></button>
-              <!-- Formulaire de recherche -->
             </ul>
+            <!-- Formulaire de recherche -->
+            <!-- with-image -->
+            <div class="only-search ">
+              <form method="get" id="searchform" action="https://joseph956.github.io/pctest/" role="search">
+                <!-- <i class="fa-sharp fa-solid fa-magnifying-glass" height="1px" width="1px"></i> -->
+                <!-- <i class="fas magnifying-glass icon-fct" aria-hidden="true"></i> -->
+                <label for="s" class="assistive-text">Recherche</label>
+                <input type="text" class="field" name="s" id="s" placeholder="Recherche" />
+                <input type="submit" class="submit" name="submit" id="searchsubmit" value="Recherche" />
+              </form>
+            </div>
+            <!-- <input type="search" id="search" value="" placeholder="Recherche" onchange="searchPage()" />
+            <button @click="searchPage()"></button> -->
+            <!-- Formulaire de recherche -->
             <div class="only-search width-image">
               <button class="burger">
                 <span class="bar"></span>
@@ -129,6 +132,7 @@
 </template>
 
 <script>
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Footteur from "@/views/public/Footteur.vue";
 export default {
   name: "Navbar",
@@ -145,7 +149,7 @@ export default {
       if (
         (a === "depannages")
       ) {
-        windows.open("/public/depannages");
+        windows.open("/publics/depannages");
       }
     },
   },
@@ -155,7 +159,7 @@ export default {
 <style lang="scss" scoped>
 /** fonts */
 // @import url("https://fonts.googleapis.com/css2?familly=leckerli+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 /**Variables */
 :root {
@@ -188,14 +192,17 @@ body {
 .copyrightPctest {
   text-size-adjust: 100%;
   letter-spacing: 2px;
-  // margin-top: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  padding: 0;
 }
 
 /** Navbar */
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  // padding: 10px;
   font-size: 1.2rem;
   background: var(--navbar-bg-color);
   color: var(--navbar-color);
@@ -211,17 +218,26 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: auto;
+    margin: 0 auto 0 auto;
+    padding: 0 1rem 0;
   }
 
-  .navbarLinks {
+  .navContainer .navbarLinks {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    list-style: none;
+    // background-color: white;
+    transition: opacity 0.4s;
   }
 
-  .navbarLinks .navbarLink {
-    padding: 0 10px 0 10px;
+  .navbarLinks .navbarLink:hover {
+    // width: 100%;
+    height: 100%;
+    // color: #ffffff;
+    background-color: #e4d9d9;
+    // padding: 0 10px 0 10px;
+    opacity: 0.8;
   }
 
   .navbarLinks .whith-image #searchform {
@@ -278,6 +294,10 @@ body {
   }
 }
 
+.fas {
+  font-size: small;
+}
+
 .burger {
   display: none;
 }
@@ -323,20 +343,62 @@ ul {
   margin-bottom: -5px;
   box-shadow: 0px 0px 20px #7f7d7d, 20px 20px 40px #1010215a;
 
-  #searchform {
-    position: absolute;
-    top: 3.8em;
-    right: 7.6%;
-    text-align: right;
-    top: auto;
-    bottom: -27px;
-    max-width: 195px;
-    height: 32px;
-  }
+}
+
+#searchform {
+  // position: relative;
+  top: 3.8em;
+  right: 7.6%;
+  text-align: right;
+  top: auto;
+  bottom: -27px;
+  max-width: 195px;
+  height: 32px;
+}
+
+.icon {
+  font-size: 10px;
+}
+
+#branding .with-image #searchform {
+  top: auto;
+  bottom: -27px;
+  max-width: 195px;
+  height: 32px;
+}
+
+#branding .only-search #searchform {
+  top: 5px;
+  z-index: 1;
+}
+
+#branding .only-search #s {
+  width: 100%;
+  color: #f7f3f3;
+  background-color: rgba(126, 99, 99, 0.4);
+  border-color: rgba(177, 165, 165, 0.2);
+  border-radius: 2px;
+  font-size: 14px;
+  height: 20px;
+  line-height: 1.2em;
+  padding: 4px 10px 4px 55px;
+  margin: 0 0.5rem 0;
 }
 
 #searchsubmit {
   display: none;
+}
+
+input#s {
+  background: url("../../assets/icons/icons8-chercher-50.png") no-repeat 1px;
+  height: 1px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 1px;
+  color: #fff;
+  height: 2px;
+  line-height: 1.2em;
+  padding: 4px 10px 4px 55px;
 }
 
 /*****************************

@@ -1,6 +1,6 @@
 // Admin
-import AdminLayout from '@/views/admin/layout.vue';
-import Dashboard from '@/views/admin/Dashboard.vue';
+import AdminLayout from './../admin/layout.vue';
+import Dashboard from './../admin/Dashboard.vue';
 
 
 export  {

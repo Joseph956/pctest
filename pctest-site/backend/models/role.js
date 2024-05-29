@@ -11,10 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.Role.hasMany(models.User, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' });
+      models.User.belongsTo(models.Role, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' });
     }
   }
   Role.init({
-    role: DataTypes.STRING
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   }, {
     sequelize,
     modelName: 'Role',

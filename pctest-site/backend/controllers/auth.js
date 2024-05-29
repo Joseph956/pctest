@@ -27,20 +27,22 @@ exports.signUp = (req, res, next) => {
                     });
                     Role.findOne({
                         where: { role: "user" },
-                        defaults: {
-                            role: "user"
-                        }
+                        // defaults: {
+                        //     role: "user"
+                        // }
                     }).then(role => {
                         if (role != null) {
                             console.log('Creation de l\'utilisateur : ', user);
                             user.isAdmin = role.id;
+                            user.RoleId = role.id;
                             User.create({
                                 firstname: req.body.firstname,
                                 lastname: req.body.lastname,
                                 phone: req.body.phone,
                                 email: req.body.email,
                                 password: hash,
-                                isAdmin: role.id
+                                isAdmin: role.id,
+                                RoleId: role.id
                             }).then(function (newUser) {
                                 res.status(201).json({ newUser, message: "Compte créé !!! " });
                             }).catch(function (error) {
@@ -93,17 +95,18 @@ exports.signIn = (req, res) => {
                         }
                         //GET LOGGED USER ROLE
                         Role.findOne({
-                            where: { id: user.isAdmin }
-                        }).then(isAdmin => {
+                            where: { id: user.RoleId }
+                        }).then(role => {
 
                             res.status(200).json({
                                 userId: user.id,
-                                Role: isAdmin,
+                                Role: role,
                                 token: jwt.sign({
                                     userId: user.id,
-                                    Role: isAdmin,
+                                    Role: role,
                                 },
-                                    process.env.RANDOM_TOKEN_SECRET, { expiresIn: '24h' })
+                                    process.env.RANDOM_TOKEN_SECRET, { expiresIn: '24h' }),
+                                    isAdmin: user.isAdmin
                             });
                         })
                     }).catch((error) => {

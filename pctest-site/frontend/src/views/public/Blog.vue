@@ -9,12 +9,25 @@
 
 <script>
 
+import { mapState } from "vuex";
+import axios from "axios";
 export default {
   name: "Blog",
+  components: {
+    axios
+  },
+  computed: {
+      ...mapState(["status"]),
+    },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped >
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+h1 {
+  font-family: "Lato";
+}
 .container {
   padding: 3rem;
   background-color: #f9f9f9;

@@ -1,12 +1,20 @@
 <template>
     <div class="admin-header" >
-        header admin
+       <h1>Header admin</h1>
+       <button @click="logout()">Se deconnecter</button> 
     </div>
 </template>
 
 <script>
 export default {
     name: "AdminHeader",
+
+    methods: {
+        logout() {
+            localStorage.removeItem("token");
+            this.$router.push("/admin/dashboard");
+        },
+    }
 }
 
 </script>
@@ -24,5 +32,8 @@ export default {
     font-weight: bold;
     font-family: 'Lato', sans-serif;
     border-bottom: solid 1px rgb(0, 0, 0);
+}
+button {
+    float: right;
 }
 </style>

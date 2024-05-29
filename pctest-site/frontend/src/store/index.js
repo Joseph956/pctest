@@ -1,14 +1,12 @@
-// import Vue from 'vue'
 import { createStore } from 'vuex';
 import axios from 'axios';
 
-// Vue.use(VueQuillEditor)
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'http://localhost:3000/api/',
   timeout: 10000,
   headers: {
     'Accept': "application/json",
-    "Content-Type": "application/json",  
+    "Content-Type": "application/json",
   },
 });
 let user = localStorage.getItem('user');
@@ -50,16 +48,19 @@ export default createStore({
     getUsers: [],
     getStatus: '',
     getUsersList: [],
-    user: user,
-    users: user,
-    userId: user.userId,
-    token: user.token,
-    firstname: user.firstname,
-    lastname: user.lastname,
-    email: user.email,
-    phone: user.phone,
-    createdAt: user.createdAt,
-    isAdmin: user.isAdmin,
+    user: '',
+    users: '',
+    userId: '',
+    token: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    createdAt:'',
+    isAdmin: '',
+    isLogged: false,
+    userId: -1,
+    roleId: -1,
 
   },
   getters: {
@@ -68,8 +69,21 @@ export default createStore({
     },
   },
   mutations: {
+    setToken(state, token) {
+      state.token = token;
+      state.isLogged = !!token; //vérifie si le token est défini ou null et renvoie true ou false
+    },
+    setAdmin(state, admin) {
+      state.isAdmin = admin;
+    },
     setStatus: function (state, status) {
       state.status = status;
+    },
+    setUser(state, user) {
+      state.userId = user;
+    },
+    setRole(state, role) {
+      state.roleId = role;
     },
     getUsers: function (state, users) {
       // instance.defaults.headers.common['Authorization'] = user.token;
@@ -84,6 +98,15 @@ export default createStore({
 
   },
   actions: {
+    setToken({ commit }, token) {
+      commit("setToken", token);
+    },
+    setAdmin({ commit }, admin) {
+      commit("setAdmin", admin);
+    },
+    setUser({ commit }, user) {
+      commit("setUser", user);
+    },
     createMessage: ({ commit }, message) => {
       commit('setStatus', 'loading');
       return instance

@@ -6,6 +6,7 @@ import Depannages from '@/views/public/Depannages.vue';
 import Logitheque from '@/views/public/Logitheque.vue';
 import Navbar from '@/views/public/Navbar.vue';
 import Tarifs from '@/views/public/Tarifs.vue';
+import Footteur from '@/views/public/Footteur.vue';
 
 import PublicLayout from '@/views/public/layout.vue';
 
@@ -18,5 +19,6 @@ export  {
     Tarifs,
     Contact,
     About,
-    Blog,    
+    Blog,  
+    Footteur
 }
